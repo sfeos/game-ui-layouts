@@ -1,9 +1,19 @@
-@media only screen and (min-width: 560px) {
-    
-    h1{color: green;}
+header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-areas:
+        "player-name context actions";
+        
+    #player-name {
+        grid-area: player-name;
+    }
 
-    p{color:pink;}
-    
-    
-    
-} // end media query
+    #context {
+        grid-area: context;
+    }
+
+    #actions {
+        grid-area: actions;
+    }
+}
+
