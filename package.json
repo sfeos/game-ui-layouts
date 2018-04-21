@@ -1,0 +1,29 @@
+{
+  "name": "game-ui-layouts",
+  "version": "1.0.0",
+  "description": "game-ui-layouts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfeos/game-ui-layouts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sfeos/game-ui-layouts/issues"
+  },
+  "homepage": "https://github.com/sfeos/game-ui-layouts#readme",
+  "dependencies": {
+    "npm": "^5.8.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.7",
+    "gulp": "^3.9.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-sass": "^4.0.1"
+  }
+}
