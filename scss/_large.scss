@@ -1,0 +1,20 @@
+header {
+    display: grid;
+    grid-template-columns: 525px auto 525px;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "player-name context actions";
+        
+    #player-name {
+        grid-area: player-name;
+    }
+    
+    #context {
+        grid-area: context;
+    }
+    
+    #actions {
+        grid-area: actions;
+    }
+}
+

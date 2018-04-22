@@ -2,6 +2,8 @@
 
 @import "variables";
 
+@import "resources";
+
 @import "small-default";
 
 @media only screen and (min-width: 560px) {
@@ -10,4 +12,18 @@
 
 @media only screen and (min-width: 1140px) {
     @import "large";
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    color: $primaryColor;
 }

@@ -190,11 +190,17 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  display: grid;
+  grid-template-rows: 85px 1fr;
+}
+
 header {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: "player-name   actions" "context       context";
+  grid-template-areas: "player-name actions" "context context";
+  align-items: center;
 }
 
 header #player-name {
@@ -203,26 +209,56 @@ header #player-name {
 
 header #context {
   grid-area: context;
+  text-align: center;
+  align-content: center;
 }
 
 header #actions {
   grid-area: actions;
+  display: grid;
+  justify-self: end;
+  justify-items: end;
+}
+
+header #actions h2 {
+  font-size: 70%;
 }
 
 nav {
-  height: 100vh;
-  background-color: lightgrey;
+  height: 99%;
 }
 
-body {
-  font-size: 16px;
-  font-family: 'Courier New', Courier, monospace;
+nav ul {
+  height: 100%;
+  width: 95%;
+  margin-left: 2.5%;
+  display: grid;
+  grid-template-rows: repeat(15, 1fr);
+  align-items: center;
+}
+
+nav ul li {
+  border: solid 1px #80d9f7;
+  padding: 10px;
+}
+
+footer,
+section#display,
+section#resources {
+  display: none;
 }
 
 @media only screen and (min-width: 560px) {
+  body {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 85px 1fr 270px;
+  }
+
   header {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
     grid-template-areas: "player-name context actions";
   }
 
@@ -237,4 +273,71 @@ body {
   header #actions {
     grid-area: actions;
   }
+
+  main {
+    display: grid;
+    grid-template-columns: 178px auto 187px;
+    grid-template-rows: 1fr;
+    grid-template-areas: "resources display nav";
+  }
+
+  main section#resources {
+    grid-area: resources;
+  }
+
+  main section#display {
+    grid-area: display;
+    height: 100%;
+    width: 100%;
+    border: dashed 1px red;
+  }
+
+  main nav {
+    grid-area: nav;
+  }
+
+  main nav ul li {
+    padding: 3px;
+  }
+
+  footer,
+  section#display,
+  section#resources {
+    display: inherit;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  header {
+    display: grid;
+    grid-template-columns: 525px auto 525px;
+    grid-template-rows: 1fr;
+    grid-template-areas: "player-name context actions";
+  }
+
+  header #player-name {
+    grid-area: player-name;
+  }
+
+  header #context {
+    grid-area: context;
+  }
+
+  header #actions {
+    grid-area: actions;
+  }
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #80d9f7;
 }

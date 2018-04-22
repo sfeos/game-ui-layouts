@@ -1,19 +1,58 @@
+body {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 85px 1fr 270px;
+    //grid-template-areas: "header" "main" "footer";
+}
+
 header {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
     grid-template-areas:
         "player-name context actions";
         
     #player-name {
         grid-area: player-name;
     }
-
+    
     #context {
         grid-area: context;
     }
-
+    
     #actions {
         grid-area: actions;
     }
 }
 
+main {
+    display: grid;
+    grid-template-columns: 178px auto 187px;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "resources display nav";
+
+    section#resources {
+        grid-area: resources;
+    }
+
+    section#display {
+        grid-area: display;
+        height: 100%;
+        width: 100%;
+        border: dashed 1px red;
+    }
+
+    nav {
+        grid-area: nav;
+        ul {
+            li {
+                padding: 3px;
+            }
+        }
+    }
+}
+
+footer, section#display, section#resources {
+    display: inherit;
+}
