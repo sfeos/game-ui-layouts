@@ -68,3 +68,13 @@ header {
     }
 }
 
+main {
+    grid-template-columns: 178px auto 187px;
+    grid-template-areas:
+        "resources display nav";
+
+    section#resources {
+        grid-area: resources;
+        display: grid;
+    }
+}

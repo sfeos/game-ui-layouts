@@ -76,13 +76,14 @@ header {
 main {
     grid-area: main;
     display: grid;
-    grid-template-columns: 178px auto 187px;
+    grid-template-columns: auto 187px;
     grid-template-rows: 1fr;
     grid-template-areas:
-        "resources display nav";
+        "display nav";
 
     section#resources {
         grid-area: resources;
+        display: none;
     }
 
     section#display {

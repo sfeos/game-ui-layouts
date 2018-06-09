@@ -324,13 +324,14 @@ section#resources {
   main {
     grid-area: main;
     display: grid;
-    grid-template-columns: 178px auto 187px;
+    grid-template-columns: auto 187px;
     grid-template-rows: 1fr;
-    grid-template-areas: "resources display nav";
+    grid-template-areas: "display nav";
   }
 
   main section#resources {
     grid-area: resources;
+    display: none;
   }
 
   main section#display {
@@ -423,6 +424,16 @@ section#resources {
 
   header #actions #actions-text h2 {
     text-align: right;
+  }
+
+  main {
+    grid-template-columns: 178px auto 187px;
+    grid-template-areas: "resources display nav";
+  }
+
+  main section#resources {
+    grid-area: resources;
+    display: grid;
   }
 }
 
