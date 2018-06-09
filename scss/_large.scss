@@ -1,3 +1,7 @@
+body {
+    grid-template-rows: 90px 1fr 270px;
+}
+
 header {
     display: grid;
     grid-template-columns: 525px auto 525px;
@@ -6,15 +10,61 @@ header {
         "player-name context actions";
         
     #player-name {
+        display: grid;
+        grid-template-columns: 191px 256px auto;
+        grid-template-areas: "playerLeft playerCenter playerRight";
         grid-area: player-name;
+        background-image: url("/images/00HudAssets-Ubiquitous/00HudAssets-Ubiquitous/01HudTopLeftSlice.png");
+        background-repeat: no-repeat;
+        background-size: 100% 90px;
+        height: 85px;
+        width: 525px;
+        
+        h1 {
+            grid-area: playerCenter;
+            margin-bottom: 20px;
+            justify-self: center;
+            align-self: center;
+        }
     }
     
     #context {
         grid-area: context;
+        display: grid;
+        background-image: url("/images/00HudAssets-Ubiquitous/00HudAssets-Ubiquitous/01HudTopPixel.png");
+        background-repeat: repeat-x;
+        background-size: 100% 85px;
+        height: 85px;
+        //width: fit-content;
+        
+        h1 {
+            justify-self: center;
+            align-self: center;
+        }
     }
     
     #actions {
         grid-area: actions;
+        display: grid;
+        grid-template-columns: 85px 256px auto;
+        grid-template-areas: "actionsLeft actionsCenter actionsRight";
+        background-image: url("/images/00HudAssets-Ubiquitous/00HudAssets-Ubiquitous/01HudTopRightSlice.png");
+        background-repeat: no-repeat;
+        background-size: 100% 85px;
+        height: 85px;
+        width: 525px;
+
+        #actions-text {
+            grid-area: actionsCenter;
+            margin-bottom: 30px;
+            justify-self: center;
+            align-self: center;
+            width: fit-content;
+
+            h2 {
+                text-align: right;
+            }
+        }
     }
 }
 
